@@ -2,9 +2,7 @@ package top.stores.whatsappclone.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -24,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
         mSectionPagerAdapter = SectionPagerAdapter(supportFragmentManager)
         container.adapter = mSectionPagerAdapter
         fab.setOnClickListener{view->
@@ -35,8 +34,20 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
 
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item?.itemId
+        if (id == R.id.action_settings){
+            return true
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
 
 
 
