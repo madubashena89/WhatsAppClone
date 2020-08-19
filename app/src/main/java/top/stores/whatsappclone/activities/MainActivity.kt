@@ -1,5 +1,7 @@
 package top.stores.whatsappclone.activities
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
@@ -88,5 +90,9 @@ inner class SectionPagerAdapter (fm : FragmentManager) : FragmentPagerAdapter(fm
                 }
             }
         }
+
+    companion object{
+        fun newIntent(context : Context) = Intent(context, MainActivity::class.java)
+    }
 
 }
