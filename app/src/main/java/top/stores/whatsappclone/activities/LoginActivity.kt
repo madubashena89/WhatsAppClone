@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import top.stores.whatsappclone.R
 
 class LoginActivity : AppCompatActivity() {
@@ -15,7 +16,11 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-  fun onCLick(v : View){
+    fun onLogin(v: View){
+        Toast.makeText(this, "Login clicked", Toast.LENGTH_LONG).show()
+    }
+
+  fun onSignUp(v : View){
       startActivity(SignUpActivity.newIntent(this))
       finish()
   }
